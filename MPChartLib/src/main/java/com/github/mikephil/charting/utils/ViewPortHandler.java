@@ -3,7 +3,10 @@ package com.github.mikephil.charting.utils;
 
 import android.graphics.Matrix;
 import android.graphics.RectF;
+import android.util.Log;
 import android.view.View;
+
+import static java.lang.Math.abs;
 
 /**
  * Class that contains information about the charts current viewport settings, including offsets, scale & translation
@@ -462,7 +465,10 @@ public class ViewPortHandler {
 
         float maxTransX = -width * (mScaleX - 1f);
         mTransX = Math.min(Math.max(curTransX, maxTransX - mTransOffsetX), mTransOffsetX);
-
+        Log.d("ViewPortHandler width", String.valueOf(width));
+        Log.d("ViewPortHandler curTransX", String.valueOf(curTransX));
+        Log.d("ViewPortHandler maxTransX", String.valueOf(maxTransX));
+        Log.d("ViewPortHandler mTransX", String.valueOf(mTransX));
         float maxTransY = height * (mScaleY - 1f);
         mTransY = Math.max(Math.min(curTransY, maxTransY + mTransOffsetY), -mTransOffsetY);
 

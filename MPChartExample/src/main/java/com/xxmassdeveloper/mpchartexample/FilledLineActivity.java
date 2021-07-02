@@ -160,6 +160,7 @@ public class FilledLineActivity extends DemoBase {
 
             // set data
             chart.setData(data);
+            chart.zoomAndCenterAnimated(2f, 1f, set1.getXMax(), set1.getYMin(), YAxis.AxisDependency.RIGHT, 5000);
         }
     }
 
